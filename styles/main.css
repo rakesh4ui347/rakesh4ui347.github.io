@@ -27,6 +27,12 @@ body {
     text-align: center;
     font-family: 'Quicksand', sans-serif;
 }
+#pTime {
+            font-family: monospace;
+            font-weight: bold;
+            font-size: 2em;
+            padding: 0.5rem 2rem;
+        }
 /*Extra Markup and styles for table-esque vertical and horizonal centering*/
 .site-wrapper {
     display: table;
