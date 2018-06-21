@@ -32,6 +32,7 @@ body {
             font-weight: bold;
             font-size: 2em;
             padding: 0.5rem 2rem;
+            border: 2px solid #ffffff;
         }
 /*Extra Markup and styles for table-esque vertical and horizonal centering*/
 .site-wrapper {
