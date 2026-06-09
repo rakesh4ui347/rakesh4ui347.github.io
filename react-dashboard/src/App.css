@@ -132,15 +132,29 @@ body::-webkit-scrollbar-thumb {
 .hero {
   display: grid;
   gap: 2rem;
-  grid-template-columns: 1.5fr 1fr;
+  grid-template-columns: 1.4fr 1fr;
   align-items: center;
-  min-height: 70vh;
-  padding: 4rem 2rem;
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  min-height: calc(100vh - 4.5rem);
+  padding: 5rem 2rem 3rem;
+  position: relative;
+  background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.16), transparent 22%),
+              radial-gradient(circle at 18% 20%, rgba(16, 185, 129, 0.12), transparent 18%),
+              linear-gradient(135deg, #020617 0%, #0f172a 100%);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 84% 18%, rgba(56, 189, 248, 0.18), transparent 22%),
+                    radial-gradient(circle at 12% 82%, rgba(59, 130, 246, 0.12), transparent 18%);
+  pointer-events: none;
 }
 
 .hero-copy {
   max-width: 620px;
+  position: relative;
+  z-index: 1;
 }
 
 .eyebrow {
@@ -476,20 +490,29 @@ body::-webkit-scrollbar-thumb {
 
 .hero-stats {
   display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
+  margin-top: 2rem;
 }
 
 .stat-card {
-  padding: 1.5rem;
-  border-radius: 1rem;
-  background: rgba(148, 163, 184, 0.08);
-  border: 1px solid rgba(148, 163, 184, 0.16);
+  padding: 1.75rem 1.5rem;
+  border-radius: 1.5rem;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(56, 189, 248, 0.22);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.22);
 }
 
 .stat-card span {
   display: block;
-  font-size: 2.2rem;
-  font-weight: 700;
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.stat-card p {
+  margin-top: 0.6rem;
+  color: #94a3b8;
 }
 
 .section {
