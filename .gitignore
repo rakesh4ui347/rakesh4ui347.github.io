@@ -1,0 +1,10 @@
+﻿# Ignore only react-dashboard build and dependencies
+react-dashboard/node_modules/
+react-dashboard/dist/
+react-dashboard/build/
+react-dashboard/.vite/
+react-dashboard/.env
+react-dashboard/.env.*.local
+react-dashboard/npm-debug.log*
+react-dashboard/yarn-debug.log*
+react-dashboard/pnpm-debug.log*
