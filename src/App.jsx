@@ -109,6 +109,7 @@ function App() {
 
       <SpotlightSection {...spotlightData} />
 
+      <AboutSection />
       <section className="section" id="services">
         <SectionHeader title="Services" subtitle="Delivering enterprise-grade FinTech, SAP, and full-stack solutions using React, Node.js, cloud-native architectures, and modern payment ecosystems." />
         <div className="grid cards">
@@ -118,7 +119,6 @@ function App() {
         </div>
       </section>
 
-      <AboutSection />
 
       <section className="section features-section" id="features">
         <SectionHeader title="Technical Expertise" subtitle="Core engineering strengths developed through 8+ years
