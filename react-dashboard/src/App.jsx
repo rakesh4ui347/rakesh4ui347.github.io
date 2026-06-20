@@ -110,7 +110,7 @@ function App() {
       <SpotlightSection {...spotlightData} />
 
       <section className="section" id="services">
-        <SectionHeader title="Services" subtitle="Professional full-stack fintech services for enterprise dashboards, APIs, and payment systems." />
+        <SectionHeader title="Services" subtitle="Delivering enterprise-grade FinTech, SAP, and full-stack solutions using React, Node.js, cloud-native architectures, and modern payment ecosystems." />
         <div className="grid cards">
           {services.map((service) => (
             <InfoCard key={service.title} title={service.title} description={service.description} />
@@ -121,7 +121,8 @@ function App() {
       <AboutSection />
 
       <section className="section features-section" id="features">
-        <SectionHeader title="Features" subtitle="Production-ready dashboard patterns built for fintech, enterprise UX, and scalable service delivery." />
+        <SectionHeader title="Technical Expertise" subtitle="Core engineering strengths developed through 8+ years
+of building enterprise FinTech, SAP, and AI-powered platforms." />
         <div className="grid feature-grid">
           {features.map((feature) => (
             <InfoCard key={feature.title} title={feature.title} description={feature.description} className="feature-card" />
@@ -163,7 +164,18 @@ function App() {
       </section>
 
       <section className="section section-alt" id="portfolio">
-        <SectionHeader title="Portfolio" subtitle=" 8+ years building enterprise products across FinTech, SAP HR Tech, TravelTech, and AI-powered platforms." />
+        <SectionHeader title="Enterprise Portfolio" subtitle=" Built and delivered enterprise platforms used across FinTech, SAP HR Tech, TravelTech, Payroll, ATS integrations, and AI-powered products." />
+        <div className="portfolio-stats">
+          <span>8+ Years</span>
+          <span>10+ Products</span>
+          <span>3 Companies</span>
+          <span>5 Domains</span>
+        </div>
+        <div className="company-badges">
+          <span>SAP</span>
+          <span>Zaggle</span>
+          <span>Zenwork</span>
+        </div>
         <div className="grid portfolio-grid">
           {portfolioProjects.map((project) => (
             <PortfolioCard key={project.title} project={project} />
@@ -172,7 +184,8 @@ function App() {
       </section>
 
       <section className="section project-highlights" id="projects">
-        <SectionHeader title="Featured Projects" subtitle="Detailed highlights for Tax Engine, Google Map, and AI Review Responser applications." />
+        <SectionHeader title="Open Source & GitHub Projects" subtitle="Selected technical projects demonstrating AI, integrations,
+frontend architecture, and full-stack engineering skills." />
         <div className="grid project-detail-grid">
           {projectHighlights.map((project) => (
             <ProjectDetailCard key={project.title} project={project} />
@@ -180,23 +193,8 @@ function App() {
         </div>
       </section>
 
-      <section className="section testimonial-section" id="testimonials">
-        <SectionHeader title="Testimonials" subtitle="What stakeholders say about the dashboard and enterprise UI work." />
-        <div className="grid testimonial-grid">
-          {testimonials.map((testimonial) => (
-            <div className="testimonial-card" key={testimonial.name}>
-              <p>“{testimonial.quote}”</p>
-              <div>
-                <strong>{testimonial.name}</strong>
-                <span>{testimonial.role} · {testimonial.company}</span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
       <section className="section" id="tech-stack">
-        <SectionHeader title="Technology Stack" subtitle="Core front-end and backend technologies powering the full-stack dashboard." />
+        <SectionHeader title="Technology Stack" subtitle="Technologies used to build enterprise FinTech, SAP HR Tech, TravelTech, and AI-powered applications at scale." />
         <div className="grid course-grid">
           {techStack.map((course) => (
             <div className="course-card" key={course.title}>
@@ -206,16 +204,6 @@ function App() {
           ))}
         </div>
       </section>
-
-      <section className="section section-alt cta-section">
-        <div className="cta-card">
-          <h2>Ready to accelerate your full-stack fintech dashboard?</h2>
-          <p>Transform this React/Vite foundation into a production-grade payments, billing, or enterprise reporting application.</p>
-          <a href="#contact" className="button">Start a project</a>
-        </div>
-      </section>
-
-      <TeamSection team={team} />
 
       <section className="section contact-section" id="contact">
         <SectionHeader title="Contact" subtitle="Start a full-stack fintech dashboard, API integration, or enterprise React product." />
