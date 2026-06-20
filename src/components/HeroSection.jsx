@@ -43,6 +43,10 @@ export default function HeroSection({
             href={secondary.link}
             target="_blank"
             rel="noreferrer"
+            download
+            onClick={() => {
+              window.clarity?.('event', 'resume_download');
+            }}
           >
             {secondary.label}
           </a>
