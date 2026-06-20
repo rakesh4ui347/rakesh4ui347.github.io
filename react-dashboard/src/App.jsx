@@ -163,7 +163,7 @@ function App() {
       </section>
 
       <section className="section section-alt" id="portfolio">
-        <SectionHeader title="Portfolio" subtitle="Enterprise product work, GitHub case studies, and full-stack UI systems." />
+        <SectionHeader title="Portfolio" subtitle=" 8+ years building enterprise products across FinTech, SAP HR Tech, TravelTech, and AI-powered platforms." />
         <div className="grid portfolio-grid">
           {portfolioProjects.map((project) => (
             <PortfolioCard key={project.title} project={project} />

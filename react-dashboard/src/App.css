@@ -679,18 +679,23 @@ body::-webkit-scrollbar-thumb {
 }
 
 .section-title {
-  max-width: 720px;
-  margin-bottom: 2rem;
+ text-align: center;
+  max-width: 900px;
+  margin: 0 auto 3rem;
 }
 
 .section-title h2 {
-  margin: 0;
-  font-size: 2rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
 }
 
 .section-title p {
-  margin: 0.75rem 0 0;
+ max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
   color: #94a3b8;
+  font-size: 1.05rem;
 }
 
 .grid {
@@ -701,17 +706,50 @@ body::-webkit-scrollbar-thumb {
 .cards {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
+.card,
+.portfolio-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 360px;
 
-.card, .portfolio-card {
   padding: 1.5rem;
   border-radius: 1.1rem;
+
   background: rgba(148, 163, 184, 0.06);
   border: 1px solid rgba(148, 163, 184, 0.16);
+
+  transition: all 0.3s ease;
+}
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 24px;
+  align-items: stretch;
+}
+.card p {
+  flex: 1;
+  line-height: 1.7;
+  color: #cbd5e1;
+  margin-bottom: 1.5rem;
 }
 
-.card h3,
+.card:hover,
+.portfolio-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(96, 165, 250, 0.4);
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
+}
+.card .button {
+  margin-top: auto;
+}
+
 .portfolio-card h3 {
-  margin-top: 0;
+  min-height: 90x;
+  margin: 0 0 1rem;
+  line-height: 1.3;
+  font-size: 1.75rem;
+  font-weight: 700;
 }
 
 .project-header {
@@ -731,12 +769,24 @@ body::-webkit-scrollbar-thumb {
   font-weight: 700;
 }
 
-.portfolio-grid {
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-}
 
 .project-detail-grid {
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+.portfolio-category {
+  display: inline-flex;
+  align-self: flex-start;
+
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+
+  background: rgba(59, 130, 246, 0.15);
+  color: #38bdf8;
+
+  font-size: 0.85rem;
+  font-weight: 600;
+
+  margin-bottom: 1.25rem;
 }
 
 .project-detail-card {

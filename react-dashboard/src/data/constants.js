@@ -1,13 +1,35 @@
 export const heroData = {
-  eyebrow: 'Senior Full-Stack Engineer',
-  title: '8+ years building professional full-stack fintech dashboards and enterprise applications.',
-  description: 'Senior software engineer with 8+ years building scalable React.js, Next.js, TypeScript, Redux, Node.js, PostgreSQL, Redis, and Kafka applications for payments and billing workflows.',
-  primary: { label: 'Learn More', link: '#about' },
-  secondary: { label: 'Explore Tax Engine', link: '#taxengine' },
+  eyebrow: 'Rakesh Kumar · Senior Full-Stack Engineer',
+
+  title:
+    '8+ years building enterprise-grade FinTech, SAP, and AI-powered applications.',
+
+  description:
+    'Experienced Full-Stack Engineer specializing in React, TypeScript, Node.js, PostgreSQL, Redis, and Kafka. Proven track record of delivering scalable enterprise products across FinTech, HR Tech, TravelTech, and AI-driven platforms.',
+
+  primary: {
+    label: 'View Projects',
+    link: '#portfolio'
+  },
+
+  secondary: {
+    label: 'Get In Touch',
+    link: '#contact'
+  },
+
   stats: [
-    { value: '30+', label: 'Reusable UI modules' },
-    { value: '12', label: 'Dashboard sections' },
-    { value: '1', label: 'Production-ready Vite app' }
+    {
+      value: '8+',
+      label: 'Years Experience'
+    },
+    {
+      value: '5+',
+      label: 'Enterprise Platforms'
+    },
+    {
+      value: '30+',
+      label: 'Reusable UI Components'
+    }
   ]
 };
 
@@ -60,52 +82,94 @@ export const headerData = {
   links: [
     { label: 'Home', href: '#home' },
     { label: 'About', href: '#about' },
-    { label: 'Services', href: '#services' },
-    { label: 'Features', href: '#features' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'AI Chat', href: '#ai-chat' },
-    { label: 'Tax Engine', href: '#taxengine' },
+    { label: 'Experience', href: '#experience' },
+    { label: 'Skills', href: '#skills' },
     { label: 'Portfolio', href: '#portfolio' },
     { label: 'Contact', href: '#contact' }
   ]
 };
 
 export const portfolioProjects = [
-  {
-    title: 'Tax Engine',
-    category: 'React · Payroll',
-    description: 'A production-grade payroll tax engine with a Next.js React frontend, NestJS backend, API auth, and embeddable payroll components.',
-    link: 'https://github.com/rakesh4ui347/Tax-Engine',
-    label: 'View on GitHub'
-  },
-  {
-    title: 'Google Map',
-    category: 'React · Maps',
-    description: 'Interactive Google Maps integration with markers, location search, and custom map layers.',
-    link: 'https://github.com/rakesh4ui347/Google_Map',
-    label: 'View on GitHub'
-  },
-  {
-    title: 'AI Review Responser',
-    category: 'AI · Automation',
-    description: 'An AI-powered review responder that creates context-aware replies and improves customer engagement.',
-    link: 'https://github.com/rakesh4ui347/AI-review-Responser',
-    label: 'View on GitHub'
-  },
-  {
-    title: 'React Dashboard',
-    category: 'React · Dashboard',
-    description: 'A modern Vite-built React dashboard structure with reusable cards, navigation, and responsive layout.',
-    link: '#portfolio',
-    label: 'Explore'
-  },
-  {
-    title: 'UI System Refresh',
-    category: 'Design · Rebrand',
-    description: 'A polished UI design update that improves visual hierarchy, accessibility, and brand consistency.',
-    link: '#services',
-    label: 'Learn More'
-  }
+{
+title: 'Fintech Payments Platform',
+category: 'FinTech',
+description:
+'Built AP/AR payment workflows, accounting integrations, and payment automation using Stripe, Plaid, and QuickBooks.',
+link: '#',
+label: 'Enterprise Product'
+},
+{
+title: 'Expense Management System (EMS)',
+category: 'FinTech',
+description:
+'Enterprise expense platform with approvals, reimbursements, dynamic forms, and policy workflows.',
+link: '#',
+label: 'Enterprise Product'
+},
+{
+title: 'Self Booking Tool (SBT)',
+category: 'TravelTech',
+description:
+'Travel booking platform with approvals, policy compliance, and cancellation management.',
+link: '#',
+label: 'Enterprise Product'
+},
+{
+title: 'NextGen CDP',
+category: 'SAP GenAI',
+description:
+'CCareer development platform with goals, Opportunity Marketplace, and AI-powered recommendations.',
+link: '#',
+label: 'SAP Product'
+},
+{
+title: 'Growth Portfolio',
+category: 'SAP Talent',
+description:
+'Employee growth platform providing attribute ratings, recommendations, manager evaluations, and AI-driven career development experiences.',
+link: '#',
+label: 'SAP Product'
+},
+{
+title: 'Talent Intelligence Hub',
+category: 'SAP HR . HR Tech',
+description:
+'Centralized talent intelligence solution for managing skills, competencies, behaviors, proficiency ratings, multilingual content, and organizational talent data.',
+link: '#',
+label: 'SAP Product'
+},
+{
+title: 'Talent Matching Platform',
+category: 'ATS Platform',
+description:
+'Automated talent matching and candidate synchronization platform integrating Workday, Taleo, Paradox, and ClearCompany with browser extensions and intelligent candidate data processing.',
+link: '#',
+label: 'Enterprise Project'
+},
+{
+title: 'Tax Engine',
+category: 'Payroll',
+description:
+'Production-grade payroll tax engine built with Next.js, NestJS, authentication, payroll processing workflows, and embeddable payroll components.',
+link: 'https://github.com/rakesh4ui347/Tax-Engine',
+label: 'View on GitHub'
+},
+{
+title: 'AI Review Responser',
+category: 'AI · Automation',
+description:
+'AI-powered review responder that generates context-aware customer replies and improves customer engagement through intelligent response suggestions.',
+link: 'https://github.com/rakesh4ui347/AI-review-Responser',
+label: 'View on GitHub ->'
+},
+{
+title: 'Google Map',
+category: 'React · Maps',
+description:
+'Interactive Google Maps integration with markers, geolocation, custom map layers, and advanced location search capabilities.',
+link: 'https://github.com/rakesh4ui347/Google_Map',
+label: 'View on GitHub'
+}
 ];
 
 export const services = [
@@ -154,6 +218,22 @@ export const projectHighlights = [
     description: 'AI-assisted review response tool designed to generate context-aware reply drafts and improve customer engagement.',
     features: ['Automated response generation', 'Tone and sentiment support', 'Custom templates for reviews'],
     link: 'https://github.com/rakesh4ui347/AI-review-Responser',
+    cta: 'View Source'
+  },
+   {
+    title: 'Talent Intelligence Hub',
+    category: 'Talent · Intelligence Hub',
+    description: 'Talent Intelligence Hub is a centralized framework that helps connect different attributes such as skills and competencies defined by the organizations with the employees of that organization.',
+    features: ['View skills', 'View competencies', 'Add or reject skills'],
+    link: 'https://help.sap.com/docs/successfactors-platform/using-talent-intelligence-hub/talent-intelligence-hub',
+    cta: 'View Source'
+  },
+   {
+    title: 'Growth Portfolio ',
+    category: 'Talent · Growth Portfolio ',
+    description: 'SAP SuccessFactors Learning plays a vital role in our comprehensive product strategy for a Future Ready Workforce and Learning is getting a lot of love from our Product team in the upcoming releases!.',
+    features: ['Employees Growth Portfolio', 'Proficiency Rating ', 'Skills'],
+    link: 'https://community.sap.com/t5/human-capital-management-blog-posts-by-sap/talent-intelligence-hub-sap-successfactors-learning-integration/ba-p/13560184',
     cta: 'View Source'
   }
 ];
