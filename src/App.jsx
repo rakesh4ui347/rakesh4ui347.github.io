@@ -7,11 +7,11 @@ import HeroSection from './components/HeroSection.jsx';
 import SpotlightSection from './components/SpotlightSection.jsx';
 import InfoCard from './components/InfoCard.jsx';
 import ProjectDetailCard from './components/ProjectDetailCard.jsx';
-import DashboardChartCard from './components/DashboardChartCard.jsx';
-import StatCard from './components/StatCard.jsx';
+import CareerDashboard from './components/CareerDashboard.jsx';
 import AIChatSection from './components/AIChatSection.jsx';
 import AIIcon from './components/AIIcon.jsx';
-import TeamSection from './components/TeamSection.jsx';
+import CountUp from './components/CountUp.jsx';
+import ExperienceSection from './components/ExperienceSection.jsx';
 import Footer from './components/Footer.jsx';
 import Header from './components/Header.jsx';
 import {
@@ -23,17 +23,13 @@ import {
   features,
   projectHighlights,
   portfolioProjects,
-  testimonials,
-  team,
-  dashboardKpis,
-  dashboardFilters,
-  dashboardCharts
+  workExperience,
+  education
 } from './data/constants.js';
 
 function App() {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [showAIChat, setShowAIChat] = useState(false);
-  const [selectedRange, setSelectedRange] = useState('30d');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -68,48 +64,12 @@ function App() {
 
       <HeroSection {...heroData} />
 
-      <section className="section dashboard-section" id="dashboard">
-        <SectionHeader title="Live Fintech Metrics" subtitle="Executive KPI cards, trend visualizations, and interactive filters for a production-ready dashboard." />
-        <div className="dashboard-controls">
-          <div className="dashboard-filters">
-            {dashboardFilters.map((filter) => (
-              <button
-                key={filter.value}
-                type="button"
-                className={`filter-pill ${selectedRange === filter.value ? 'active' : ''}`}
-                onClick={() => setSelectedRange(filter.value)}
-              >
-                {filter.label}
-              </button>
-            ))}
-          </div>
-          <div className="dashboard-summary-panel">
-            <div>
-              <p>Insights</p>
-              <strong>Current period: {selectedRange.replace('d', '-day')}</strong>
-            </div>
-            <div className="summary-pill-grid">
-              <span className="summary-pill">Revenue +12.5%</span>
-              <span className="summary-pill">New clients +18%</span>
-              <span className="summary-pill">Churn 1.7%</span>
-            </div>
-          </div>
-        </div>
-        <div className="grid cards dashboard-grid">
-          {dashboardKpis.map((kpi) => (
-            <StatCard key={kpi.label} value={kpi.value} label={kpi.label} />
-          ))}
-        </div>
-        <div className="grid chart-card-grid">
-          {dashboardCharts.map((chart) => (
-            <DashboardChartCard key={chart.title} {...chart} />
-          ))}
-        </div>
-      </section>
+      <CareerDashboard />
 
       <SpotlightSection {...spotlightData} />
 
       <AboutSection />
+      <ExperienceSection experiences={workExperience} education={education} />
       <section className="section" id="services">
         <SectionHeader title="Services" subtitle="Delivering enterprise-grade FinTech, SAP, and full-stack solutions using React, Node.js, cloud-native architectures, and modern payment ecosystems." />
         <div className="grid cards">
@@ -148,15 +108,15 @@ of building enterprise FinTech, SAP, and AI-powered platforms." />
           </div>
           <div className="tax-engine-stats">
             <div className="tax-engine-stat">
-              <strong>5</strong>
+              <CountUp value="5" as="strong" />
               <span>years of tax support</span>
             </div>
             <div className="tax-engine-stat">
-              <strong>50+</strong>
+              <CountUp value="50+" as="strong" />
               <span>states supported</span>
             </div>
             <div className="tax-engine-stat">
-              <strong>6</strong>
+              <CountUp value="6" as="strong" />
               <span>roles supported</span>
             </div>
           </div>
@@ -166,15 +126,16 @@ of building enterprise FinTech, SAP, and AI-powered platforms." />
       <section className="section section-alt" id="portfolio">
         <SectionHeader title="Enterprise Portfolio" subtitle=" Built and delivered enterprise platforms used across FinTech, SAP HR Tech, TravelTech, Payroll, ATS integrations, and AI-powered products." />
         <div className="portfolio-stats">
-          <span>8+ Years</span>
-          <span>10+ Products</span>
-          <span>3 Companies</span>
-          <span>5 Domains</span>
+          <span><CountUp value="8+" /> Years</span>
+          <span><CountUp value="14" /> Products</span>
+          <span><CountUp value="4" /> Companies</span>
+          <span><CountUp value="5" /> Domains</span>
         </div>
         <div className="company-badges">
-          <span>SAP</span>
-          <span>Zaggle</span>
           <span>Zenwork</span>
+          <span>Zaggle</span>
+          <span>SAP Labs</span>
+          <span>Swooptalent</span>
         </div>
         <div className="grid portfolio-grid">
           {portfolioProjects.map((project) => (
@@ -193,21 +154,33 @@ frontend architecture, and full-stack engineering skills." />
         </div>
       </section>
 
-      <section className="section" id="tech-stack">
-        <SectionHeader title="Technology Stack" subtitle="Technologies used to build enterprise FinTech, SAP HR Tech, TravelTech, and AI-powered applications at scale." />
-        <div className="grid course-grid">
-          {techStack.map((course) => (
-            <div className="course-card" key={course.title}>
-              <span className="course-icon">{course.icon}</span>
-              <h4>{course.title}</h4>
+      <section className="section tech-stack-section" id="tech-stack">
+        <div className="section-container">
+          <SectionHeader title="Technology Stack" subtitle="40+ technologies across frontend, backend, data, cloud, AI, and testing — aligned with resume proficiency." />
+          {['Frontend', 'Backend', 'Data', 'Cloud & DevOps', 'AI & Integrations', 'Testing'].map((group) => (
+            <div key={group} className="tech-group">
+              <h3 className="tech-group-title">{group}</h3>
+              <div className="course-grid">
+                {techStack.filter((item) => item.group === group).map((course) => (
+                  <div className="course-card" key={course.title}>
+                    <span className="course-icon">{course.icon}</span>
+                    <h4>{course.title}</h4>
+                  </div>
+                ))}
+              </div>
             </div>
           ))}
         </div>
       </section>
 
       <section className="section contact-section" id="contact">
-        <SectionHeader title="Contact" subtitle="Start a full-stack fintech dashboard, API integration, or enterprise React product." />
-        <ContactForm />
+        <div className="section-container">
+          <SectionHeader
+            title="Get In Touch"
+            subtitle="Ready to discuss a FinTech platform, enterprise React product, AI integration, or full-stack architecture project?"
+          />
+          <ContactForm />
+        </div>
       </section>
 
       <Footer />

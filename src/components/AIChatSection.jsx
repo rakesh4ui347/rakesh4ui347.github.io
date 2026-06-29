@@ -4,15 +4,15 @@ import AIIcon from './AIIcon.jsx';
 const initialMessages = [
   {
     role: 'assistant',
-    text: 'AI dashboard assistant ready. Ask about React architecture, fintech integrations, APIs, or production-grade dashboard patterns.'
+    text: 'Hi! I can help you explore Rakesh\'s expertise — FinTech AP/AR platforms, SAP micro-frontends, RAG/AI applications, React architecture, and full-stack engineering patterns.'
   }
 ];
 
 const suggestions = [
-  'How should I structure a React dashboard?',
-  'Best API design for fintech services',
-  'How to connect PostgreSQL and Redis?',
-  'What makes a dashboard enterprise-ready?'
+  'What FinTech projects has Rakesh built?',
+  'Tell me about SAP & GenAI experience',
+  'What is his tech stack?',
+  'How does he approach RAG architecture?'
 ];
 
 export default function AIChatSection({ open, onClose }) {
@@ -29,23 +29,39 @@ export default function AIChatSection({ open, onClose }) {
   const getResponse = (prompt) => {
     const text = prompt.toLowerCase();
 
-    if (text.includes('react') || text.includes('dashboard')) {
-      return 'For a professional fintech dashboard, use reusable React components, strong state management, responsive layouts, and a clean data-driven UI design.';
+    if (text.includes('fintech') || text.includes('payment') || text.includes('ap') || text.includes('ar')) {
+      return 'Rakesh builds enterprise FinTech platforms at Zenwork — AP/AR workflows, bills, recurring payments, QuickBooks (QBO/QBD) sync, and integrations with Stripe, Plaid, Mercoa, and COLUMN using Node.js microservices and Next.js.';
     }
 
-    if (text.includes('api') || text.includes('backend')) {
-      return 'Use Node.js REST APIs with secure authentication, modular services, and PostgreSQL for transactional data with Redis caching for fast queries.';
+    if (text.includes('sap') || text.includes('successfactors') || text.includes('talent')) {
+      return 'At SAP Labs, Rakesh led React + TypeScript micro-frontend development for SuccessFactors products — NextGen CDP, Growth Portfolio, and Talent Intelligence Hub with GenAI recommendations, WCAG accessibility, and SAP Fiori design principles.';
     }
 
-    if (text.includes('postgres') || text.includes('redis') || text.includes('kafka')) {
-      return 'PostgreSQL is ideal for relational fintech data, Redis can accelerate session and cache lookups, and Kafka helps with event-driven payment pipelines.';
+    if (text.includes('travel') || text.includes('zaggle') || text.includes('expense') || text.includes('booking')) {
+      return 'At Zaggle, Rakesh delivered the Expense Management System, Self Booking Tool, Dynamic Form Builder, and a shared React NPM component library — with WebSocket updates, Recharts dashboards, and GCP deployment.';
     }
 
-    if (text.includes('enterprise') || text.includes('production')) {
-      return 'Focus on reliability, accessibility, observability, and performance testing. Use a scalable component system and clear monitoring for fintech delivery.';
+    if (text.includes('rag') || text.includes('ai') || text.includes('langchain') || text.includes('genai')) {
+      return 'Rakesh builds production RAG applications with LangChain, vector embeddings, semantic retrieval, and Gemini/OpenAI APIs. He also integrated GenAI into SAP career development products and uses Cursor and GitHub Copilot for AI-assisted development.';
     }
 
-    return 'That sounds interesting. I recommend focusing on a strong React frontend with a Node.js API backend, secure payment flows, and reusable dashboard widgets.';
+    if (text.includes('stack') || text.includes('tech') || text.includes('skill')) {
+      return 'Core stack: React, Next.js, TypeScript, Redux Toolkit, TanStack Query, Node.js, NestJS, Prisma, PostgreSQL, Redis, Kafka, AWS/GCP, Docker, LangChain, Stripe, Plaid, Jest, Cypress, and Playwright.';
+    }
+
+    if (text.includes('experience') || text.includes('years') || text.includes('career')) {
+      return 'Rakesh has 8+ years of experience across Zenwork (FinTech), Zaggle (TravelTech/EMS), SAP Labs (HR Tech), and Swooptalent (ATS/Talent Matching). He has delivered 11+ enterprise products and mentored 3–5 engineers.';
+    }
+
+    if (text.includes('react') || text.includes('dashboard') || text.includes('frontend')) {
+      return 'Rakesh specializes in scalable React/Next.js architectures — micro-frontends, Server Components, Redux Toolkit, TanStack Table with virtualization, Storybook component libraries, and WCAG-compliant enterprise UX patterns.';
+    }
+
+    if (text.includes('api') || text.includes('backend') || text.includes('node')) {
+      return 'Backend expertise includes Node.js/NestJS REST and GraphQL APIs, BFF layers, Prisma ORM, PostgreSQL, Redis caching, Kafka event pipelines, JWT/OAuth2/RBAC auth, and AWS/GCP cloud-native deployment.';
+    }
+
+    return 'Rakesh is a Senior Full-Stack Engineer with deep expertise in FinTech, SAP, TravelTech, and AI. Ask about specific projects, technologies, or architecture patterns — or explore the Career Dashboard and Portfolio sections.';
   };
 
   const handleSend = (event) => {
@@ -79,10 +95,13 @@ export default function AIChatSection({ open, onClose }) {
       <div className="ai-chat-panel">
         <div className="ai-chat-panel-header">
           <div>
-            <h2><span className="ai-chat-icon">
-              <AIIcon className="ai-icon" />
-            </span> AI Chat Assistant</h2>
-            <p>Ask the dashboard advisor for architecture tips, fintech integrations, and production-ready React guidance.</p>
+            <h2>
+              <span className="ai-chat-icon">
+                <AIIcon className="ai-icon" />
+              </span>{' '}
+              Portfolio AI Assistant
+            </h2>
+            <p>Ask about Rakesh&apos;s experience, projects, tech stack, and engineering approach.</p>
           </div>
           <button className="ai-chat-close" type="button" onClick={onClose} aria-label="Close chat">
             ×
@@ -108,7 +127,7 @@ export default function AIChatSection({ open, onClose }) {
           <form className="ai-chat-form" onSubmit={handleSend}>
             <input
               type="text"
-              placeholder="Type your question..."
+              placeholder="Ask about experience, projects, or tech stack..."
               value={input}
               onChange={(event) => setInput(event.target.value)}
             />

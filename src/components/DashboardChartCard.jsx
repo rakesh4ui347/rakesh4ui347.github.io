@@ -1,34 +1,62 @@
-export default function DashboardChartCard({ title, value, chart, trend, note }) {
+import CountUp from './CountUp.jsx';
+import MiniLineChart from './MiniLineChart.jsx';
+import MiniBarChart from './MiniBarChart.jsx';
+
+export default function DashboardChartCard({
+  title,
+  value,
+  chart,
+  trend,
+  note,
+  animateKey = '',
+  featured = false
+}) {
+  const chartTypeLabel = chart.type === 'line' ? 'Trend index' : 'Proficiency score';
+
   return (
-    <div className="chart-card">
+    <article className={`chart-card ${featured ? 'chart-card-featured' : ''}`}>
       <div className="chart-card-header">
         <div>
           <p className="chart-card-label">{title}</p>
-          <span className="chart-card-value">{value}</span>
+          <CountUp value={value} className="chart-card-value" as="span" resetKey={animateKey} />
         </div>
         <div className={`chart-trend ${trend.direction}`}>
           {trend.label}
         </div>
       </div>
+
       <div className="chart-visual">
         {chart.type === 'line' ? (
-          <div className="sparkline">
-            {chart.points.map((height, index) => (
-              <span key={index} className="sparkline-point" style={{ height: `${height}%` }} />
-            ))}
-          </div>
+          <MiniLineChart
+            labels={chart.labels}
+            points={chart.points}
+            animateKey={animateKey}
+            chartId={title}
+            featured={featured}
+          />
         ) : (
-          <div className="bar-chart">
-            {chart.bars.map((bar, index) => (
-              <div key={index} className="bar-chart-item">
-                <span className="bar-chart-bar" style={{ height: `${bar}%` }} />
-                <small>{chart.labels[index]}</small>
-              </div>
-            ))}
-          </div>
+          <MiniBarChart
+            labels={chart.labels}
+            bars={chart.bars}
+            animateKey={animateKey}
+            chartId={title}
+          />
         )}
       </div>
+
+      <div className="chart-card-footer">
+        <span className="chart-legend">
+          <span className="legend-dot" />
+          {chartTypeLabel}
+        </span>
+        {chart.labels && (
+          <span className="chart-range">
+            {chart.labels[0]} — {chart.labels[chart.labels.length - 1]}
+          </span>
+        )}
+      </div>
+
       <p className="chart-note">{note}</p>
-    </div>
+    </article>
   );
 }

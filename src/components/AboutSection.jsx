@@ -1,31 +1,32 @@
-const companies = ['SAP', 'Zaggle', 'Zenwork'];
+const companies = ['Zenwork', 'Zaggle', 'SAP Labs', 'Swooptalent'];
 
 const features = [
   {
-    title: '💳 Enterprise FinTech',
+    title: 'Enterprise FinTech',
     description:
-      'AP/AR workflows, billing systems, payments, accounting integrations, and financial automation.'
+      'AP/AR workflows, subscription billing, QuickBooks integrations, and payment ecosystems with Stripe, Plaid, Mercoa, and COLUMN.'
   },
   {
-    title: '⚙️ Full-Stack Engineering',
+    title: 'Full-Stack Engineering',
     description:
-      'React, TypeScript, Node.js, PostgreSQL, Redis, Kafka, AWS, and scalable API design.'
+      'React, Next.js, TypeScript, Node.js, NestJS, PostgreSQL, Redis, Kafka, AWS/GCP, and scalable microservices architecture.'
   },
   {
-    title: '🚀 Product & Leadership',
+    title: 'AI & Product Leadership',
     description:
-      'Architecture decisions, performance optimization, UX improvements, mentoring, and cross-functional delivery.'
+      'RAG pipelines, LangChain, GenAI UX, micro-frontends, mentoring 3–5 engineers, and cross-functional delivery at scale.'
   }
 ];
 
 const highlights = [
   '8+ Years of Software Engineering Experience',
-  'Built Enterprise FinTech, SAP HR Tech & AI Platforms',
-  'Expert in React, TypeScript & Node.js',
-  'Integrated Stripe, Plaid, Mercoa & QuickBooks APIs',
-  'Experience with Micro Frontends & Cloud Architectures',
-  'Strong focus on Performance, Scalability & UX',
-  'Hands-on with AI-assisted development workflows'
+  'Built 11+ Enterprise Products Across 4 Companies',
+  'Expert in React, Next.js, TypeScript & Node.js',
+  'Integrated Stripe, Plaid, Mercoa, QuickBooks & COLUMN',
+  'RAG & LangChain AI Applications in Production',
+  'Micro-Frontends, Kafka, Redis & Cloud-Native Systems',
+  'Mentored Engineers & Led Technical Initiatives',
+  'AI-Assisted Development with Cursor & GitHub Copilot'
 ];
 
 export default function AboutSection() {
@@ -36,7 +37,7 @@ export default function AboutSection() {
 
         <p>
           Senior Full-Stack Engineer specializing in enterprise FinTech,
-          SAP HR Tech, TravelTech, and AI-powered applications.
+          SAP HR Tech, TravelTech, ATS integrations, and AI-powered applications.
         </p>
 
         <div className="company-badges">
@@ -49,31 +50,29 @@ export default function AboutSection() {
       <div className="about-grid">
         <div className="about-copy">
           <p>
-            I am a Full-Stack Engineer with 8+ years of experience building
-            scalable enterprise applications using React, TypeScript,
-            Node.js, PostgreSQL, Redis, Kafka, and cloud-native
-            architectures.
+            I am a Senior Full-Stack Engineer with 8+ years of experience designing
+            and building scalable, high-performance web applications. I specialize in
+            React, Next.js, TypeScript, Node.js, PostgreSQL, Redis, Kafka, and
+            cloud-native architectures across distributed systems.
           </p>
 
           <p>
-            Currently at Zenwork, building enterprise FinTech platforms
-            focused on AP/AR automation, QuickBooks integrations,
-            subscription billing, and payment ecosystems powered by
-            Stripe, Plaid, and Mercoa.
+            Currently at Zenwork, I build enterprise FinTech platforms focused on
+            AP/AR automation, QuickBooks integrations, subscription billing, and
+            payment ecosystems powered by Stripe, Plaid, and Mercoa — alongside
+            RAG-powered AI applications using LangChain and vector search.
           </p>
 
           <p>
-            Previously at SAP and Zaggle, I delivered enterprise-scale
-            applications, micro-frontend architectures, and AI-powered
-            experiences used by thousands of users.
+            Previously at Zaggle, SAP Labs, and Swooptalent, I delivered
+            expense management systems, travel booking tools, SAP SuccessFactors
+            products with GenAI, talent matching platforms, and micro-frontend
+            architectures used by thousands of enterprise users.
           </p>
 
           <div className="about-features">
             {features.map((feature) => (
-              <div
-                key={feature.title}
-                className="about-feature-card"
-              >
+              <div key={feature.title} className="about-feature-card">
                 <h4>{feature.title}</h4>
                 <p>{feature.description}</p>
               </div>
